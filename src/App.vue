@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main>
+      <div class="search-box">
+        <input 
+        type="text" 
+        class="search-bar" 
+        placeholder="Search..."
+        v-model="query"
+        @keypress='fetchWeather'
+        />
+      </div>
+
+      <div class="weather-wrap">
+        <div class="location-box">
+          <div class="location">Northhampton, UK</div>
+          <div class="date">Monday 20 January 2020</div>
+        </div>
+
+        <div class="weather-box">
+          <div class="temp">9 &#176;</div>
+          <div class="weather">Rain</div>
+        </div>
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+ }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
